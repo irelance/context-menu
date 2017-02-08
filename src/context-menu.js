@@ -112,9 +112,9 @@ var ContextMenu = ContextMenu || function (opt) {
                 id = d.getTime(),
                 self = this;
             $(document).on('contextmenu', selector, function (e) {
+                self.context = $(this);
                 var $menu = self.buildMenu(data, id);
                 self.target.html($menu);
-                self.context = $(this);
                 e.preventDefault();
                 e.stopPropagation();
                 $('.context-menu-context:not(.context-menu-context-sub)').hide();
